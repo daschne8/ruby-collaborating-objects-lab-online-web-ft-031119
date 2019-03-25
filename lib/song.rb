@@ -6,9 +6,9 @@ class Song
     @name = name
   end
   def self.new_by_filename(filename)
-    artist,title,genre = filename.split(" - ")
+    artist_name,title,genre = filename.split(" - ")
     song = Song.new(title)
-    song.artist = Artist.find_or_create_by_name(artist)
+    song.artist_name = artist_name.find_or_create_by_name(artist_name)
     @@songs << song
     song
   end
