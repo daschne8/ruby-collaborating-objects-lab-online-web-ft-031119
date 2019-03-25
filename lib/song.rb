@@ -8,8 +8,8 @@ class Song
   def self.new_by_filename(filename)
     artist_name,title,genre = filename.split(" - ")
     song = Song.new(title)
-    self.artist = Artist.find_or_create_by_name(artist_name)
-    self.artist.add_song(self)
+    song.artist = Artist.find_or_create_by_name(artist_name)
+    song.artist.add_song(self)
     @@songs << song
     song
   end
