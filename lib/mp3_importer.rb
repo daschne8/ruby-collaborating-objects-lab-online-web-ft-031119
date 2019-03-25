@@ -5,7 +5,7 @@ class MP3Importer
     @path = path
   end
   def files
-    Dir["./spec/fixtures/mp3s"]
+    Dir.glob('path/**/*').select{ |e| File.file? e }
   end
   def import
 
