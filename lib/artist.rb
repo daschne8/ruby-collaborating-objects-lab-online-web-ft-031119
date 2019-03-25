@@ -18,7 +18,9 @@ class Artist
         return artist
       end
     end
-    @@all << Artist.new(name)
+    artist = Artist.new(name)
+    @@all << artist
+    artist
   end
   def print_songs
     @songs.each_char { |song| puts song.name  }
