@@ -9,7 +9,6 @@ class Song
     artist,title,genre = filename.split(" - ")
     song = Song.new(title)
     song.artist = Artist.find_or_create_by_name(artist)
-    song.save
     @@songs << song
     song
   end
