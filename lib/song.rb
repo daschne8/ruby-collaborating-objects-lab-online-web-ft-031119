@@ -1,6 +1,7 @@
 class Song
   attr_accessor :name, :artist
   attr_reader
+  @@songs = []
   def initialize(name)
     @name = name
   end
@@ -9,5 +10,13 @@ class Song
     song = Song.new(title)
     song.artist = Artist,find_or_create_by_name(artist)
     song
+  end
+  def find_or_create_by_name(name)
+    @@songs.each do |song|
+      if song.name == name
+        return song
+      end
+    end
+    return Song.new(name)
   end
 end
