@@ -19,7 +19,7 @@ class Artist
       end
     end
     artist = Artist.new(name)
-    seelf.save
+    self.save
     artist
   end
   def print_songs
