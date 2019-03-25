@@ -11,12 +11,4 @@ class Song
     song.artist = Artist,find_or_create_by_name(artist)
     song
   end
-  def find_or_create_by_name(name)
-    @@songs.each do |song|
-      if song.name == name
-        return song
-      end
-    end
-    return Song.new(name)
-  end
 end
