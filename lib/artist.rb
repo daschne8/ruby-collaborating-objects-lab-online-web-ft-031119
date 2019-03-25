@@ -5,7 +5,6 @@ class Artist
   def initialize(name)
     @name = name
     @songs = []
-    self.save
   end
   def add_song(song)
     @songs << song
@@ -20,7 +19,7 @@ class Artist
       end
     end
     artist = Artist.new(name)
-    @@all << artist
+    seelf.save
     artist
   end
   def print_songs
